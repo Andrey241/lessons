@@ -103,6 +103,22 @@ if (localStorage.getItem("ratio")) {
   localStorage.setItem("ratio", "1.375");
 }
 
+function localStorageInput() {
+  if (localStorage.getItem("height")) {
+    document.querySelector("#height").value = localStorage.getItem("height");
+    height = localStorage.getItem("height");
+  }
+  if (localStorage.getItem("weight")) {
+    document.querySelector("#weight").value = localStorage.getItem("weight");
+    weight = localStorage.getItem("weight");
+  }
+  if (localStorage.getItem("age")) {
+    document.querySelector("#age").value = localStorage.getItem("age");
+    age = localStorage.getItem("age");
+  }
+  calcTotal();
+}
+localStorageInput();
 function initLocalSettings(selector, activeClass) {
   const elements = document.querySelectorAll(selector);
   elements.forEach((elem) => {
@@ -184,12 +200,15 @@ function getDynamicInformation(selector) {
     switch (input.getAttribute("id")) {
       case "height":
         height = +input.value;
+        localStorage.setItem("height", +input.value);
         break;
       case "weight":
         weight = +input.value;
+        localStorage.setItem("weight", +input.value);
         break;
       case "age":
         age = +input.value;
+        localStorage.setItem("age", +input.value);
         break;
     }
 
