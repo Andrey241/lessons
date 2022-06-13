@@ -10,33 +10,19 @@ checkbox.addEventListener("change", () => {
   localStorage.setItem("isCheck", true);
 });
 
-if (localStorage.getItem("bg") === "changed") {
+if (localStorage.getItem("bg") == "changed") {
   form.style.backgroundColor = "red";
 }
+
 change.addEventListener("click", () => {
-  if (localStorage.getItem("bg") === "changed") {
+  if (localStorage.getItem("bg") == "changed") {
     localStorage.removeItem("bg");
-    form.style.backgroundColor = "#fff";
+    form.style.backgroundColor = "white";
   } else {
     localStorage.setItem("bg", "changed");
     form.style.backgroundColor = "red";
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const persone = {
   nam: "alex",
