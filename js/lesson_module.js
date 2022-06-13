@@ -28,3 +28,5 @@ function myModule() {
     console.log("bye");
   };
 }
+
+module.exports = myModule;
